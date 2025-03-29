@@ -1,10 +1,10 @@
 .main {
     font-family: Garamond, serif;
+    font-size: 18px;
     margin-left: 300px; /* Left margin 1 inch */
     margin-right: 300px; /* Right margin 1 inch */
     text-align: center;
 }
-
 
 .total_center {
     display: flex;
@@ -27,12 +27,6 @@
     right: 0;
 }
 
-@media (max-width: 780px) {
-    .continue {
-        font-size: 12px;
-    }
-  }
-
 .main img {
       display: block;
       margin-left: auto;
@@ -40,6 +34,16 @@
       padding: 2%;
       width: 35%;
       height: auto;
+}
+
+.main .textimg {
+    width: 70%;
+    height: auto;
+}
+
+.main .left-img {
+    float: left;
+    margin-right: 20px;
 }
 
 a:link {
@@ -52,7 +56,78 @@ a:visited {
     color: blue;
 }
 
-@media (max-width: 780px) {
+.musicjournal {
+  background-image: url('snow.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+}
+
+.readingjournal {
+  background-image: url('baylands.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+}
+
+.journalentry {
+  padding: 10px;
+  z-index: 1000;
+  background-color: white;
+  display: inline-block;
+}
+
+.gr_custom_container_1735691817 {
+    /* customize your Goodreads widget container here*/
+    border: 1px solid gray;
+    border-radius:10px;
+    padding: 10px 5px 10px 5px;
+    background-color: #FFFFFF;
+    color: #000000;
+    width: 300px
+  }
+  .gr_custom_header_1735691817 {
+    /* customize your Goodreads header here*/
+    border-bottom: 1px solid gray;
+    width: 100%;
+    margin-bottom: 5px;
+    text-align: center;
+    font-size: 120%
+  }
+  .gr_custom_each_container_1735691817 {
+    /* customize each individual book container here */
+    width: 100%;
+    clear: both;
+    margin-bottom: 10px;
+    overflow: auto;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #aaa;
+  }
+  .gr_custom_book_container_1735691817 {
+    /* customize your book covers here */
+    overflow: hidden;
+    height: 60px;
+      float: left;
+      margin-right: 4px;
+      width: 39px;
+  }
+  .gr_custom_author_1735691817 {
+    /* customize your author names here */
+    font-size: 10px;
+  }
+  .gr_custom_tags_1735691817 {
+    /* customize your tags here */
+    font-size: 10px;
+    color: gray;
+  }
+  .gr_custom_rating_1735691817 {
+    /* customize your rating stars here */
+    float: right;
+  }
+
+@media only screen and (max-width: 780px) {
     .main {
       margin-left: 30px;
       margin-right: 30px;
@@ -66,7 +141,16 @@ a:visited {
         font-size: 12px;
         background-color: white;
     }
-    img {
-        width: 80%;
+    .continue {
+        font-size: 12px;
+    }
+    .main img {
+        width: 70%;
+        height: auto;
+    }
+    .main .textimg {
+        width: 100%;
+        height: auto;
     }
   }
+
