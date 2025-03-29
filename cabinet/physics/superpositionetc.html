@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>SL Website</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../../styles.css">
+  <script type="text/javascript" async 
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ['\\(','\\)'] ],  // Use $...$ for inline math
+          displayMath: [ ['$$','$$'], ['\\[','\\]'] ] // Optional: use $$...$$ for display math
+        },
+        TeX: {
+          Macros: {
+            R: "\\mathbb{R}"  // Define \R to be the real number symbol ℝ
+          }
+        }
+      });
+    </script>
+</head>
+
+<body>
+  <div class="navbar">
+    <h1>WEBSITE</h1>
+    <a href="../../index.html" style="color: blue;">HOME</a><br>
+    <a href="physics.html" style="color: blue;">BACK</a>
+  </div>
+
+<div class="main">
+  <h1 style="color: white;">WEBSITE</h1>
+  <a href="" style="color: white;">HOME</a>
+  <a href="" style="color: white;">BACK</a>
+
+  <img src="images/interference.png">
+
+  <div style="text-align: left;">
+      <p>
+        <i>Assumes knowledge of:</i> the superposition principle in quantum mechanics, basic differential equation classification. Familiarity with linear algebra concepts will be helpful, since while I try to build up that part from scratch I don't provide much discussion nor proofs. It will probably go down easiest if it is review.<br>
+        <br>
+
+        A concept we use constantly in physics: given a linear, homogenous differential equation, a basis set exists which can generate <i>all</i> possible solutions to the diffeq via linear combination of its elements. I had been feeling shaky about the origins of this statement, but I knew this derived from linear algebra stuff I had seen before, so I am using this to trace its origins. Now I feel more stable and hopefully the reader will too. This concept, named, is the <br>
+        <br>
+        <b>superposition principle:</b> If $y_1$ and $y_2$ are two solutions to a linear, homogenous diffeq, then so is $y_1 + y_2$. <br>
+        <br>
+        For example, consider the equation $ay'' + by' + cy = 0$, where $a, b, c$ are scalars. <br>
+        <img src="images/1.png" class = "textimg"><br>
+        With this logic, one can then see then why if the equation were nonlinear or inhomogenous why the superposition principle no longer holds. For example, consider instead $ay'' + by' + c \sqrt{y} = 0$:<br>
+        <img src="images/2.png" class = "textimg"><br> 
+        It's not too hard to see why the superposition principle works, but the main question of this writeup is not that. Rather, I want to know: why, via superposition, can a basis set generate all possible solutions to the equation?
+    </p>
+      
+    <h3>Digression: Vector Spaces</h3>
+    <p>
+        First off, what is a basis, more rigorously? Let's forget about the physics for a moment and just work in math terms. We'll have to establish some preliminary defintions to work up to it. <br>
+        <br>
+
+        <b>Definition.</b> The set $V$ is a <u>vector space</u> iff it satisfies some axioms. I won't list them all, but basically we want vector addition and scalar multiplication to be defined and act normal. [add citation]. Colloquially, it is a set of objects which we call vectors that you can add/substract to each other, and that you can multiply scalars to. <br>
+        <br>
+        It's easiest to think of vectors as what we normally think of as a vector: an n x 1 matrix. But as long as they satisfy the axioms they can be anything — polynomials, etc. <br>
+
+        <br>
+        <span style="color: blue;">aside</span>: the axioms for vector spaces look similar to those of a field, but they're not the same. The field axioms only use elements of the field, whereas the vector space axioms use vectors and elements of a field (the scalars). So, fields are the more fundamental system, and vector spaces use fields to construct themselves. <br>
+        <br>
+        <span style="color: blue;">q</span>: I thought that the scalars would have to all be real numbers, but turns out they can be complex. How do you define what the scalars for vector spaces are, and how does their nature affect how the vector space "works," if at all? Since I'm ambiguous on this, I'll just treat all of my scalars as purely real, which is what the textbook I am studying does. This is not a trivial omission, however, because we use complex superpositions a lot in even in the most basic quantum mechanics problems. <br>
+        <span style="color: blue;">todo</span>: figure out complex scalar case <br>
+        <br>
+
+        <b>Definition.</b> Given $\mathbf{v_1, ... v_n} \in V$, and $\alpha_1, ... \alpha_n \in S$, 
+        \[
+            \alpha_1 \mathbf{v_1} + ... + \alpha_n \mathbf{v_n}
+        \]
+        is called a <u>linear combination</u> of $\mathbf{v_1, ... v_n}$. The set of all linear combinations of $\mathbf{v_1, ... v_n}$ is called the <u>span</u> of
+        $\mathbf{v_1, ... v_n}$. <br>
+
+        <br>
+        <img src="images/3.png" class = "textimg">
+        <br>
+        
+        <b>Definition.</b> The set $\{ \mathbf{v_1} ... \mathbf{v_n} \}$ is a <u>spanning set for $V$</u> iff every vector in $V$ can be written as a linear combination of $\mathbf{v_1} ... \mathbf{v_n}$. Then we write that $\text{Span}(\mathbf{v_1} ... \mathbf{v_n}) = V$.<br>
+        <br>
+        In terms of the above example, we would say $ \{ \begin{bmatrix} 1 & 0 \end{bmatrix}^T, \begin{bmatrix} 0 & 1 \end{bmatrix}^T \}$ is a spanning set for $\R^2$. Here's a quick proof: <br>
+        <br>
+        <img src="images/5.png" class = "textimg">
+        <br>
+        Note that spanning sets are not unique: $ \{ \begin{bmatrix} 2 & 0 \end{bmatrix}^T, \begin{bmatrix} 0 & 2 \end{bmatrix}^T \}$ would also be a spanning set for $\R^2$. <br>
+        <br>
+        <b>Definition.</b> If one or more of the vectors in a spanning set is in the span of the other vectors, we say the elements of the spanning set are <u>linearly dependent.</u> If not, we say they are <u>linearly independent.</u> <br>
+        <br>
+        So, a spanning set for $\R^2$ whose vectors are linearly dependent would be $ \{\begin{bmatrix} 1 & 0 \end{bmatrix}^T, \begin{bmatrix} 0 & 1 \end{bmatrix}^T, \begin{bmatrix} 0 & 2 \end{bmatrix}^T \}$. Colloquially, it has extraneous elements, since there is a smaller subset of it that would still span $\R^2$. All of the previous examples turn out to have been linearly independent. <br>
+        
+        <br>
+        <b>Definition.</b> $\mathbf{v_1} ... \mathbf{v_n}$ is a <u>minimal spanning set</u>, also known as a <u>basis</u>, for $V$ iff:<br>
+        1. $\mathbf{v_1} ... \mathbf{v_n}$ span $V$ <br>
+        2. $\mathbf{v_1} ... \mathbf{v_n}$ are linearly independent. <br>
+        <br> 
+        In summary, here are all of the terms that were introduced: vector space, linear combination, span, spanning set, linear dependence/independence, and basis. Digression end. <br>
+        <br>
+
+        Now lets bring this back to the physics. Again given a linear, homogenous diffeq, we can treat the set of all possible solutions as a vector space. Then when we say a subset of solutions forms a basis, we mean that they span the entirety of possible solution space, and thus any solution can be written as a linear combination of the basis elements. <br>
+
+        <img src="images/6.png" class = "textimg"> <br>
+        
+        Actually, that was a lot of definitions to not really say much at all. All I've done is formalized the terms involved a little more, and shown that <i>if</i> it is the case that we can treat the solution space of a linear homogenous diffeq as a vector space, and <i>if</i> it is true that a certain set of equations is a basis for that space, then the superposition principle follows — that is, we can construct any solution in the solution space from its basis solutions. Now I need to justify those ifs, which is essentially justifying the analogy between solution space and vector space.  
+    </p>
+    
+    <br>
+  </div>
+</div>
+
+
+</body>
+</html>
