@@ -1,3 +1,14 @@
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(baylands.jpeg);
+  z-index: -1;
+}
+
 .main {
     font-family: Garamond, serif;
     font-size: 18px;
@@ -59,13 +70,27 @@ a:visited {
   background-position: center center;
 }
 
-.readingjournal {
+/* .readingjournal {
   background-image: url('baylands.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center center;
-}
+} */
+
+/* .readingjournal::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(baylands.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: -1;
+} */
 
 .musicjournalentry {
   padding: 10px;
@@ -85,14 +110,10 @@ a:visited {
 
 
 @media only screen and (max-width: 780px) {
-    body {
-      -webkit-overflow-scrolling: touch;
-    }
-    
     .main {
       margin-left: 10%;
       margin-right: 10%;
-      font-size: 14px;
+      font-size: 16px;
       padding-top: 10px;
     }
     .navbar {
@@ -104,7 +125,7 @@ a:visited {
     }
 
     .continue {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .main img {
@@ -116,13 +137,13 @@ a:visited {
         height: auto;
     }
 
-    .musicjournal, .readingjournal {
+    /* .musicjournal, .readingjournal {
       background-attachment: fixed;  
       display: block;
-    }
+    } */
   
     .musicjournalentry, .readingjournalentry {
-      font-size: 12px;  
+      font-size: 16px;  
       display: block; 
       background-size: cover;
     } 
