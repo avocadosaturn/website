@@ -85,6 +85,10 @@ a:visited {
 
 
 @media only screen and (max-width: 780px) {
+    body {
+      -webkit-overflow-scrolling: touch;
+    }
+    
     .main {
       margin-left: 10%;
       margin-right: 10%;
@@ -98,10 +102,10 @@ a:visited {
         font-size: 12px;
         background-color: rgba(255, 255, 255, 0.563);
     }
+
     .continue {
         font-size: 12px;
     }
-
 
     .main img {
         width: 70%;
