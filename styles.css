@@ -41,11 +41,6 @@
     height: auto;
 }
 
-.main .left-img {
-    float: left;
-    margin-right: 20px;
-}
-
 a:link {
     text-decoration: none;
     color: blue;
@@ -72,65 +67,27 @@ a:visited {
   background-position: center center;
 }
 
-.journalentry {
+.musicjournalentry {
   padding: 10px;
   z-index: 1000;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.296);
   display: inline-block;
+  display: flex;
 }
 
-.gr_custom_container_1735691817 {
-    /* customize your Goodreads widget container here*/
-    border: 1px solid gray;
-    border-radius:10px;
-    padding: 10px 5px 10px 5px;
-    background-color: #FFFFFF;
-    color: #000000;
-    width: 300px
-  }
-  .gr_custom_header_1735691817 {
-    /* customize your Goodreads header here*/
-    border-bottom: 1px solid gray;
-    width: 100%;
-    margin-bottom: 5px;
-    text-align: center;
-    font-size: 120%
-  }
-  .gr_custom_each_container_1735691817 {
-    /* customize each individual book container here */
-    width: 100%;
-    clear: both;
-    margin-bottom: 10px;
-    overflow: auto;
-    padding-bottom: 4px;
-    border-bottom: 1px solid #aaa;
-  }
-  .gr_custom_book_container_1735691817 {
-    /* customize your book covers here */
-    overflow: hidden;
-    height: 60px;
-      float: left;
-      margin-right: 4px;
-      width: 39px;
-  }
-  .gr_custom_author_1735691817 {
-    /* customize your author names here */
-    font-size: 10px;
-  }
-  .gr_custom_tags_1735691817 {
-    /* customize your tags here */
-    font-size: 10px;
-    color: gray;
-  }
-  .gr_custom_rating_1735691817 {
-    /* customize your rating stars here */
-    float: right;
-  }
+.readingjournalentry {
+  padding: 10px;
+  z-index: 1000;
+  color: rgb(255, 250, 246);
+  display: inline-block;
+
+}
+
 
 @media only screen and (max-width: 780px) {
     .main {
-      margin-left: 30px;
-      margin-right: 30px;
+      margin-left: 10%;
+      margin-right: 10%;
       font-size: 14px;
       padding-top: 10px;
     }
@@ -139,11 +96,13 @@ a:visited {
         padding-right: 10px;
         z-index: 1000;
         font-size: 12px;
-        background-color: white;
+        background-color: rgba(255, 255, 255, 0.563);
     }
     .continue {
         font-size: 12px;
     }
+
+
     .main img {
         width: 70%;
         height: auto;
@@ -152,5 +111,17 @@ a:visited {
         width: 100%;
         height: auto;
     }
+
+    .musicjournal, .readingjournal {
+      background-attachment: fixed;  
+      display: block;
+    }
+  
+    .musicjournalentry, .readingjournalentry {
+      font-size: 12px;  
+      display: block; 
+      background-size: cover;
+    } 
+
   }
 
