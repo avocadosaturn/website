@@ -33,6 +33,12 @@ body::before {
     left: 0;
 }
 
+.content {
+  text-align: left;
+  background-color: rgba(255, 255, 255, 0.552); 
+  padding: 5%;
+}
+
 .continue {
     text-align: right;
     position: fixed;
@@ -56,12 +62,12 @@ body::before {
 
 a:link {
     text-decoration: none;
-    color: blue;
+    color: rgb(53, 53, 255);
 }
 
 a:visited {
     text-decoration: none;
-    color: blue;
+    color: rgb(53, 53, 255);
 }
 
 
