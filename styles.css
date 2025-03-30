@@ -5,7 +5,7 @@ body::before {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-image: url(baylands.jpeg);
+  background-image: url(snow.jpeg);
   z-index: -1;
 }
 
