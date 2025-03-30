@@ -33,6 +33,12 @@ body::before {
     left: 0;
 }
 
+.navbar-clear {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
 .content {
   text-align: left;
   background-color: rgba(255, 255, 255, 0.552); 
@@ -90,8 +96,8 @@ a:visited {
 
 @media only screen and (max-width: 780px) {
     .main {
-      margin-left: 10%;
-      margin-right: 10%;
+      margin-left: 5%;
+      margin-right: 5%;
       font-size: 16px;
       padding-top: 10px;
     }
@@ -99,8 +105,12 @@ a:visited {
         padding-bottom: 10px;
         padding-right: 10px;
         z-index: 1000;
-        font-size: 12px;
+        font-size: 14px;
         background-color: rgba(255, 255, 255, 0.563);
+    }
+
+    .navbar-clear {
+      font-size: 14px;
     }
 
     .continue {
@@ -108,18 +118,13 @@ a:visited {
     }
 
     .main img {
-        width: 70%;
+        width: 40%;
         height: auto;
     }
     .main .textimg {
         width: 100%;
         height: auto;
     }
-
-    /* .musicjournal, .readingjournal {
-      background-attachment: fixed;  
-      display: block;
-    } */
   
     .musicjournalentry, .readingjournalentry {
       font-size: 16px;  
