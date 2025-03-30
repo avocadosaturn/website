@@ -1,3 +1,16 @@
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(wood.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: -1;
+}
 .main {
     font-family: Garamond, serif;
     font-size: 18px;
@@ -51,35 +64,6 @@ a:visited {
     color: blue;
 }
 
-.musicjournal {
-  background-image: url('snow.jpeg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center center;
-}
-
-/* .readingjournal {
-  background-image: url('baylands.jpeg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center center;
-} */
-
-/* .readingjournal::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-image: url(baylands.jpeg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  z-index: -1;
-} */
 
 .musicjournalentry {
   padding: 10px;
